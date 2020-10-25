@@ -1,0 +1,43 @@
+GetArgs()				[]byte
+GetStringArgs()			[]string
+GetFunctionAndParameters()		(String, []string)
+GetArgsSlice()			([]byte, error)
+GetChannelID			string
+GetChannelID()			string
+InvokeChaincode(chaincodeName string, args [][]byte, channel string) pb.Response
+				pb.Response
+GetState(key string)		([]byte, error)
+PutState(key string, value []byte)	error
+DelState(key string)		error
+SetStateValidationParameter(key string, ep [byte])
+				error
+GetStateValidationParameter(key string)
+				([]byte, error)
+GetStateByRange(startKey, endKey string)
+				(StateQueryInterface, error)
+GetStateByRangeWithPagination(startKey, endKey string, pageSize int32, bookmark string)
+				(stateQueryIteratorInterface, pd.QueryResponseMetadata, error)
+GetStateByPartialCompositeKey(ObjectType string, keys []string)
+				(StateQueryIteratorInterface, error)
+CreatecompositeKey(compositeKey string)
+				(string, error)
+SpliteCompositeKey(compositeKey string)
+				(string, []string, error)
+GetQueryResult(query string)		(StateQueryIteratorInterface, error)
+GetQueryResultWithPagination(query string, pageSize int32, bookmark string)
+				(StateQueryIteratorInterface, pb.QueryResponseMetadata, error)
+GetHistoryForKey(key string)		(HistoryQueryIteratorInterface, error)
+GetPrivateData(collection, key string)	([]byte, error)
+GetPrivateDataHash(collection, key string)
+				([]byte, error)
+PutPrivateData(collection, key string, ep []byte)
+				error
+DelPrivateData(collection, key string)	error
+SetPrivateDataValidataionParameter(collection, key string, ep []byte)
+				error
+GetPrivateDataValiadationParameter(collection, key string)
+				([]byte, error)
+GetPrivateDataByRange(collection, startKey, endKey string)
+				(StateQueryIteratorInterface, error)
+GetPrivateDataByPartialCompositekey(collection, objectType string, keys []string)
+				(StateQueryIteratorInterface, error)

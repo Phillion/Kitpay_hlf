@@ -1,0 +1,55 @@
+food-supply-chain: 기본형
+fsc-restful: rest-API를 사용
+hyperledger-composer: 컴포저 사용
+
+base: 기본 설정(사용할라면 수정 가능해야 함)
+chaincode: 체인코드 작성(적극 사용)
+channel-artifacts: 
+scripts: 쉘을 모아둔 것 같다.
+
+peer-base.yaml: Docker 컨테이너 구성
+docker-compose-base.yaml: Docker 컨테이너를 구성
+configtx.yaml: 부산물과 자원 생성
+
+configtxgen: crete network artifacts
+configtxlator: Utility for generating channel configuration
+Cryptogen: Utility for generate key material
+Discovery: Command Line client for service discovery
+Idemixgen: Utility for generating key material to be used with identity mixer	MSP
+Orderer - node
+Peer - node
+Fabric-ca-client - Client for creating Registering and Enrolling user
+crypto-config.yaml: 인증서 생성을 위한 도구 설정을 위한 파일
+
+configtx.yaml
+~~DorderGenesis: Order서비스 및 genesis.block의 세부사항을 정의
+~~Channel: 채널 정보를 정의
+Consortiums: 조직으로 구성되며 Peer와 orderer로 구성된다.
+	하나의 채널은 하나의 Consortiums이지만 하위 그룹의 컨소시엄으로도 구성 가능
+Capabilities: 분산 네트워크 환경에서 네트워크마다 다른 버전의 소프트웨어를 실행하는 경우 채널 안에서 트랜잭션의 일관성을 유지하는 데 사용
+Appication: 어플리케이션 유형의 트랜잭션을 사용할 때 작성
+	구성 트랜잭션으로 인코딩할 값을 정의하거나 응용 프로그램 관련 매개 변수의 생성 블록
+
+Static`s gossip:
+	useLeaderElection:	false
+	orgLeader:	true
+
+	export CORE_PEER_GOSSIP_USELEADERELCTION=false
+	export CORE_PEER_GOSSIP_ORGLEADER=frue
+Dynamic`s gossip:
+	useLeader:	true
+	orgLeader:	false
+
+	export CORE_PEER_GOSSIP_USELEADERELCTION=true
+	export CORE_PEER_GOSSIP_ORGLEADER=false
+
+Anchor Peer
+
+
+
+go 파일이랑 app.js 추가하기
+상품권 수령(관리자 -> 사용자 트랜잭션 생성)
+상품권 전달(사용자 -> 판매자 트랜잭션 생성)
+상품권 조회(사용자 조회만으로 가능)
+거래 내역 조회(트랜잭션 내역 조회)
+정산 요청(판매자 -> 관리자 트랜잭션)
